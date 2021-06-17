@@ -30,7 +30,11 @@ public abstract class App {
             skipCount = readInt("How many jokes do you want to skip");
 
             Stream<ResponseWrapper<JokeDto>> jokesSource = readJokeSource();
-
+			jokesSource.filter(x->x!=null).
+				map(x->x.getValue().getJoke()).
+				skip(skipCount).
+				limit(jokeCount).
+				forEach(System.out::println);
             /* TODO consume the `jokesSource`
              * filter it for non null objects
              * use `skip` and `limit` to retrieve the required elements

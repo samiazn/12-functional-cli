@@ -18,7 +18,8 @@ mainClassName = 'ohm.softa.a12.App'
 
 dependencies {
 	/* Commons Lang3 */
-	implementation("org.apache.commons:commons-lang3:$commons_lang_version")
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 
 	/* Retrofit */
 	implementation("com.squareup.retrofit2:retrofit:$retrofit2_version")
