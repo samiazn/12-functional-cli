@@ -48,9 +48,10 @@ public final class AllJokesSupplier implements Supplier<ResponseWrapper<JokeDto>
 			return icndbApi.getJoke(nextJoke).get();
 
 			} catch (InterruptedException e) {
-				e.printStackTrace();
 			} catch (ExecutionException e) {
-				e.printStackTrace();
+			}
+			catch (Exception e){
+
 			}
 		}
 		/*

@@ -31,9 +31,10 @@ public abstract class App {
 
             Stream<ResponseWrapper<JokeDto>> jokesSource = readJokeSource();
 			jokesSource.filter(x->x!=null).
-				map(x->x.getValue().getJoke()).
 				skip(skipCount).
 				limit(jokeCount).
+				map(x->x.getValue()).
+				map(x->x.getJoke()).
 				forEach(System.out::println);
             /* TODO consume the `jokesSource`
              * filter it for non null objects
